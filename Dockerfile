@@ -15,3 +15,4 @@ HEALTHCHECK --interval=30s --timeout=3s \
 
 USER appuser
 
+
