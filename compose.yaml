@@ -1,20 +1,11 @@
 services:
-  app:
-    image: nginx
+
+  web:
+    image: python-app:V-0.1 
     ports:
-      - 8080:80
-    environment:
-      - APP_ENV=production
-    depends_on:
-      - db
+      - "8080:3000"
 
   db:
     image: postgres
     environment:
-      - POSTGRES_PASSWORD=secret
-    volumes:
-      - dbdata:/var/lib/postgresql/data
-
-volumes:
-  dbdata:
-  
+      POSTGRES_PASSWORD: ${{POSTGRES_PASSWORD}}
